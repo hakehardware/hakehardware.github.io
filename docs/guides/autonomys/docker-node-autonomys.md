@@ -4,7 +4,7 @@ title: Run an Autonomys Node on Docker
 
 :::warning
 
-This guide was creating for Gemeni 3H testnet and will be updated to Mainnet once released.
+This guide was created for Gemeni 3h testnet and will be updated to mainnet once released.
 
 :::
 
@@ -19,7 +19,7 @@ Here are a few quick things to keep in mind:
 You should have Docker or Docker Desktop installed. 
 1. [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
 
-This guide also uses Portainer to manage Docker.
+This guide also uses Portainer to manage Docker. I highly recommend it.
 
 ## Forward Ports
 Port forwarding allows you to map a specific port on your public IP address to a particular internal IP address. This tells your router to forward incoming requests on that port to the specified internal IP. Forwarding ports varies based on the type of equipment and configuration you have. Most of the time simply navigating to the router or modem UI you can find the Port Forwarding section and configure it. However, that is not always the case. I recommend that you google your router/modem model number to identify the appropriate steps. There are a lot of resources out there already to help you out. 
@@ -47,56 +47,13 @@ This creates a new network called "autonomys-network" using the subnet 172.25.0.
 
 ## Node Stack File
 
-I will be creating a dedicated stack file for my Node as this PC only runs the Node. But if you run a Node + Cluster you can include the containers in this stack file. This is covered in the Farmer guide so feel free to finish creating your Node following this guide, and we can add the Farmer stuff later.
+I will be creating a dedicated stack file for my Node. If you also plan to run a Cluster on the same PC as your Node, we can create a second stack file for your Cluster which uses the same network we created earlier. If you will be running a Cluster on a different PC entirely, we will also create a stack file on that PC. You do not need to modify anything in this guide for either scenario.
 
 Open up Portainer, select the environment you want to run the Node on, and then click "Stacks".
 
 ![Network Create](/img/docker-node-autonomys/stacks.png)
 
-Then click "+ Add Stack". Add a name, I usually just call mine "autonomys". Move down to the Web editor and paste in the below yaml code
-
-```yaml
-services:
-  node:
-    container_name: autonomys_node
-    image: ghcr.io/autonomys/node:gemini-3h-2024-oct-03 # Update to latest version
-    volumes:
-      -  node-data:/var/subspace:rw
-    ports:
-      - "0.0.0.0:30333:30333/tcp" # Remove if using default port
-      - "0.0.0.0:30433:30433/tcp" # Remove if using default port
-      - "9944:9944"
-      - "9080:9080"
-    restart: unless-stopped
-    command:
-      [
-        "run",
-        "--chain", "gemini-3h",
-        "--base-path", "/var/subspace",
-        "--listen-on", "/ip4/0.0.0.0/tcp/30333",
-        "--dsn-listen-on", "/ip4/0.0.0.0/tcp/30433",
-        "--rpc-cors", "all",
-        "--rpc-methods", "unsafe",
-        "--rpc-listen-on", "0.0.0.0:9944",
-        "--prometheus-listen-on", "0.0.0.0:9080",
-        "--farmer",
-        "--name", "hakehardware_guide"
-      ]
-    networks:
-      autonomys-network:
-        ipv4_address: 172.25.0.100
-    labels: # Optional for Space Port
-      com.spaceport.name: "Autonomys Node"
-    environment:
-      - TZ=America/Phoenix
-
-networks:
-  autonomys-network:
-    external: true
-
-volumes:
-  node-data:
-```
+Then click "+ Add Stack". Add a name, I usually just call mine "autonomys", and then move down to the Web editor. I have hosted the node yaml file in the "autonomys-files" repo and can be viewed here: [node.yaml](https://github.com/hakehardware/autonomys_files/blob/main/node.yaml)
 
 A few things to note:
 1. The first two entries under "ports" are not required if you are using the default ports. One situation you would not be using the default ports is if you are running more than one Node. For instance if you have Space Acres on a computer (which runs a node) and also running the Advanced CLI or Docker with a Node.
@@ -156,4 +113,4 @@ As you can see we had a HUGE jump in `best`. Unfortunately it will still require
 
 One way to make sure you have your ports forwarded correctly is to check on [you get signal](https://www.yougetsignal.com/tools/open-ports/). Just enter 30333 and 30433 and click "Check". 
 
-And that is it! As mentioned earlier, it is quite simple to add Farmer containers to the existing stack file, and that is covered in the Farmer Guide.
+And that is it! As mentioned earlier, it is quite simple to add a cluster, so check out the [Farmer Cluster Guide for Autonomys](https://hakehardware.github.io/docs/guides/autonomys/docker-cluster-autonomys), and that is covered in the Farmer Guide.
