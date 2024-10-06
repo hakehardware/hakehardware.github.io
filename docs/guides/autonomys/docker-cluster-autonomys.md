@@ -14,6 +14,7 @@ Before setting up a Cluster Farmer, you should already:
 1. Have a Node running. [Run an Autonomys Node on Docker](https://hakehardware.github.io/docs/guides/autonomys/docker-node-autonomys).
 1. Have prepped your drives. [Prep Your Drives for Autonomys](https://hakehardware.github.io/docs/guides/autonomys/prep-your-drives-for-autonomys)
 1. Have Docker installed [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
+1. Have Portainer Installed [Install Portainer Host/Agent](https://hakehardware.github.io/docs/guides/linux/install-portainer-host-agent)
 
 
 ## Create an Autonomys Network in Docker

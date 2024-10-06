@@ -17,9 +17,10 @@ Here are a few quick things to keep in mind:
 1. The Node will need to be accessible by any PCs running a Cluster Controller, or if you do not run a cluster, then by the Farmer.
 
 You should have Docker or Docker Desktop installed. 
-1. [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
+* [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
 
 This guide also uses Portainer to manage Docker. I highly recommend it.
+* [Install Portainer Host/Agent](https://hakehardware.github.io/docs/guides/linux/install-portainer-host-agent)
 
 ## Forward Ports
 Port forwarding allows you to map a specific port on your public IP address to a particular internal IP address. This tells your router to forward incoming requests on that port to the specified internal IP. Forwarding ports varies based on the type of equipment and configuration you have. Most of the time simply navigating to the router or modem UI you can find the Port Forwarding section and configure it. However, that is not always the case. I recommend that you google your router/modem model number to identify the appropriate steps. There are a lot of resources out there already to help you out. 

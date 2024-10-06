@@ -8,5 +8,5 @@ This guide was created for Gemeni 3h testnet and will be updated to mainnet once
 
 :::
 
-# Advanced Clusters
+## Introduction
 TODO
