@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Hake Hardware',
-  tagline: 'Hardware is cool',
+  tagline: 'Hardware, Blockchains, and Nerd Stuff',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
