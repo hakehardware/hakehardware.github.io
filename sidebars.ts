@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         slug: '/category/linux',
       },
-      items: ['guides/linux/install-debian-core']
+      items: ['guides/linux/install-debian-core', 'guides/linux/install-docker-debian']
     },
     {
       type: 'category',
