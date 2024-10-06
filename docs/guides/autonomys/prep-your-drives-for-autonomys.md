@@ -14,7 +14,7 @@ This guide will help you prepare your drives for farming on the Autonomys networ
 
 :::warning
 
-Use extra caution when preparing your drives. These actions will whip specific drives and could result in data loss if you wipe the incorrect drive!
+Use extra caution when preparing your drives. These actions will wipe the data on your drives and could result in data loss if you wipe the incorrect drive!
 
 :::
 
@@ -54,7 +54,7 @@ Now that you know what drives you want to prepare, we can wipe them with a singl
 wipefs --all /dev/<DEVICE LOCATION>
 ```
 
-Replace `<DEVICE LOCATION>` with your device. For instance, `nvme0n1` (NVME) or `sda` (SATA SSD). Do this for each drive you want to prepare.
+Replace `<DEVICE LOCATION>` with your device. For instance, `nvme0n1` (NVME) or `sda` (SATA SSD) for me, but make sure to use what is applicable for your setup. Do this for each drive you want to prepare.
 
 ### Format the Drives
 Next, we will format the drive in the most optimal way for Autonomys. Again, this can be done with a single command for each drive
@@ -118,7 +118,7 @@ Now that we have the mount points, and the FSTAB file created, we can mount all 
 sudo mount -av
 ```
 
-Then update systemd to loaded the latest FSTAB changes
+Then update systemd to load the latest FSTAB changes
 
 ```bash
 sudo systemctl daemon-reload
@@ -135,7 +135,7 @@ You should see each of your drives mounted to the folders you specified in the F
 ![df-h](/img/prep-your-drives-autonomys/df-h.png)
 
 ### Set Permissions
-Lastly, we need to set the permissions so that Autonomys can access the drives for farming. To do this we will set the ownership to `nobody:nogroup`
+Lastly, we need to set the permissions so that Autonomys can access the drives for farming. To do this we will set the ownership to `nobody:nogroup` for all sub-folders of our main autonomys directory
 ```bash
 sudo chown -R nobody:nogroup /media/autonomys/*
 ```
@@ -143,11 +143,9 @@ sudo chown -R nobody:nogroup /media/autonomys/*
 Now that the drives are prepared, they are ready to be added to the Farmer. You will need to make note of the mount points for each drive, as you will need to specify it in the Autonomys Farmer command. 
 
 ## Debian/Ubuntu - Script
-The script performs essential the same actions, except it automates all the steps. There will be a few prompts which you must respond to, but it is otherwise automated. The script will check for a boot partition in order to prevent wiping the OS drive, but always be sure to skip the drives you do not want to wipe. It will also automatically unmount mounted drives if necessary. 
+The script performs essentially the same actions as the Manual method. There will be a few prompts which you must respond to, but it is otherwise automated. The script will check for a boot partition in order to prevent wiping the OS drive, but always be sure to skip the drives you do not want to wipe. The script will automatically unmount mounted drives if necessary. 
 
-Currently the drive only supports NVMEs. To begin, 
-
-Follow the prompts
+Currently the script is only setup to detect NVME drives, I will eventually adapt it for SATA drives too. 
 
 ### Identify the Drives to Prepare
 We need to be absolutely certain that we are preparing the correct drives. I use the following command to print out my block devices
@@ -209,7 +207,7 @@ To prepare your drives on Windows, we need to perform the following actions:
 1. Wipe the drives
 1. Partition, Format and Label the drive
 
-We will go through each step one at a time. This guide will use `diskpart` to prepare the drives. To get started, press WIN + X. Then select "Terminal (Admin)". Then type in
+We will go through each step one at a time. This guide will use `diskpart` to prepare the drives. To get started, press `WIN + x`. Then select "Terminal (Admin)". Then type in
 ```bash
 diskpart
 ```
@@ -234,19 +232,19 @@ If you still are not sure what drive is what, you can try to list the volumes.
 
 I know volumes 0-2 are my OS drive, and I know volume 3 is a spare disk I use for storing my Code. Using these two commands I can identify the two disks I do not want to wipe (Disk 0 and Disk 3). Note that the volume numbers do not correspond to the drive numbers. I know Disk 3 is the "Code" volume because the size is 447GB which I can see is the size of Disk 3. 
 
-You can also use Disk Management, which can be found by using the search bar again and typing in "Disk Management". Here it is a bit more clear (the Disk numbers should corresond to what we saw in diskpart)
+You can also use Disk Management, which can be found by pressing `WIN + x` again and selecting "Disk Management". Here it is a bit more clear (the Disk numbers should corresond to what we saw in diskpart)
 
 ![disk-management](/img/prep-your-drives-autonomys/disk-management.png)
 
 So again, we can see Disk 0 and Disk 3 I do not want to wipe. It is important to take the time to identify the correct disk, as you will lose data in the next step if you select the wrong one.
 
 ### Wipe the Drives
-You will want to fully complete the whole process before moving to the next disk. Select the first drive in diskpart with
+You will want to fully complete the following process before moving to another disk. Select the first drive in diskpart with
 ```bash
-select disk x
+select disk <DISK NUMBER>
 ```
 
-Change the `x` for the number identified in the previous step. Then clean the drive
+Change the `<DISK NUMBER>` to the number identified in the previous step. Then clean the drive
 ```bash
 clean
 ```
