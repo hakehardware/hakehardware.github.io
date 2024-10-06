@@ -150,3 +150,12 @@ Here is a demonstrated example
 ![All in One](/img/docker-cluster-autonomys/ip_addresses.png)
 
 As you can see, the dedicated Cluster uses the Docker IP to make the internal NATs connections. But since the Controller has to reach outside the Docker network to connect to the Node, we need to specify the IP address of the PC hosting the Node, and not the Docker IP. Same with the Plotter and Farmer. 
+
+## Optimizations
+
+### Farmer
+Everytime you start your Farmer it will do a benchmark to determine the most efficient proving method. This only needs to be done once to determine if its `ConcurrentChunks` or `WholeSector`. Once you know, you can hard code the results into the stack file by modifying the path to something like
+
+```yaml
+path=/farm-1,size=100G,record-chunks-mode=<ConcurrentChunks or WholeSector>
+```
