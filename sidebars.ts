@@ -55,7 +55,12 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         slug: '/category/autonomys',
       },
-      items: ['guides/autonomys/docker-node-autonomys', 'guides/autonomys/docker-cluster-autonomys']
+      items: [
+        'guides/autonomys/docker-node-autonomys', 
+        'guides/autonomys/docker-cluster-autonomys', 
+        'guides/autonomys/prep-your-drives-for-autonomys',
+        'guides/autonomys/advanced-clusters'
+      ]
     }
   ]
 };

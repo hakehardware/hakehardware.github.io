@@ -48,7 +48,7 @@ Because of how modular a Cluster is, depending on your setup you may want to dep
 1. The **Plotter** is connected to **NATs** and uses GPU or CPU resources to plot to any Farmers connected to the network.
 1. The **Farmer** is connected to **NATs** and SSDs which will be used to store blockchain data for farming.
 
-Because of how modular a Cluster is, you can add more Plotters if you want to plot faster, more Farmers if you want to farm more space, and more Cache and/or Controllers to increase efficiency. For instance, many uses put a Cache on every PC with a Plotter to reduce network traffic.
+Because of how modular a Cluster is, you can add more Plotters if you want to plot faster, more Farmers if you want to farm more space, and more Cache and/or Controllers to increase efficiency. For instance, many users put a Cache on every PC with a Plotter to reduce network traffic.
 
 For redundancy, you can run multiple Controllers and Cache pairs. Additional redundancy can be added for NATs by running a NATs cluster (different than an Autonomys cluster). These more complex topics will be covered in the Advanced Clusters guide.
 
