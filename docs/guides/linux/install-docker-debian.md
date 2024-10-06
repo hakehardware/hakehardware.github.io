@@ -3,8 +3,8 @@ id: install-docker-debian
 title: Install Docker on Debian
 ---
 
-# Introduction
-One of the first things I always install on my COMET running Debian is Docker. It is literally my favorite piece of software. There is an official guide for Debian, which an be found on the [Official Docker Docs](https://docs.docker.com/engine/install/debian/). But this is my way of doing it.
+## Introduction
+One of the first things I always install is Docker. It is literally my favorite piece of software. There is an official guide for Debian, which an be found on the [Official Docker Docs](https://docs.docker.com/engine/install/debian/). But this is my way of doing it.
 
 ## Installation
 
@@ -50,8 +50,8 @@ Install Docker packages
 ```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-
-(OPTIONAL) If you do not want to preface your Docker commands with `sudo` you can run this command to add the current user to the "sudo" group. There are some security implications here so be sure this is something you really want to do.
+## (OPTIONAL) Post Install
+If you do not want to preface your Docker commands with `sudo` you can run this command to add the current user to the "docker" group. There are some security implications here so be sure this is something you really want to do.
 ```bash
 sudo usermod -aG docker $USER
 ```
