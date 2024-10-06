@@ -55,7 +55,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         slug: '/category/autonomys',
       },
-      items: ['/guides/autonomys/docker-node-autonomys']
+      items: ['guides/autonomys/docker-node-autonomys']
     }
   ]
 };

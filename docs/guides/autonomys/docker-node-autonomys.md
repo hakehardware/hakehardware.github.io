@@ -26,7 +26,7 @@ Port forwarding allows you to map a specific port on your public IP address to a
 
 I am using the UniFi Dream Machine Pro and there is a user interface that allows me to forward my ports easily
 
-![Port Forward](/static/img/docker-node-autonomys/dream_machine_port_forward.png)
+![Port Forward](/static/img/docker-node-autonomys-dream_machine_port_forward.png)
 
 In the above example, you can see ports 30333 and 30433 map to the IP where my Node is running (192.168.69.100).
 
@@ -43,7 +43,7 @@ sudo docker network create \
 
 This creates a new network called "autonomys-network" using the subnet 172.25.0.0/16 and the gateway 172.25.0.1.
 
-![Network Create](/static/img/docker-node-autonomys/network-create.png)
+![Network Create](/static/img/docker-node-autonomys-network-create.png)
 
 ## Node Stack File
 
@@ -51,7 +51,7 @@ I will be creating a dedicated stack file for my Node as this PC only runs the N
 
 Open up Portainer, select the environment you want to run the Node on, and then click "Stacks".
 
-![Network Create](/static/img/docker-node-autonomys/stacks.png)
+![Network Create](/static/img/docker-node-autonomys-stacks.png)
 
 Then click "+ Add Stack". Add a name, I usually just call mine "autonomys". Move down to the Web editor and paste in the below yaml code
 
@@ -131,7 +131,7 @@ volumes:
 
 Once you have your stack file ready, you can scroll down and click the "Deploy" button. At this point the image will be downloaded and all containers (just the Node for now) will be deployed, this may take a moment. Once completed, you will be redirected to the stacks page, click the "autonomys" stack to view the associated containers.
 
-![Node Container](/static/img/docker-node-autonomys/node_container.png)
+![Node Container](/static/img/docker-node-autonomys-node_container.png)
 
 To view the logs, under the "Quick Actions" column, click the first icon that looks like a sheet of paper. This is really helpful to see how things are progressing. Initially you will see fust a few peers, but overtime they should increase to 40, give it a few hours though. If you are not seeing the peers increase then it may be an issue with port forwarding.
 
