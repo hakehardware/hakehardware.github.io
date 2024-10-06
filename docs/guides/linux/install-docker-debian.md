@@ -1,5 +1,4 @@
 ---
-id: install-docker-debian
 title: Install Docker on Debian
 ---
 
