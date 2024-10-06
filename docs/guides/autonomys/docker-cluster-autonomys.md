@@ -50,7 +50,7 @@ Because of how modular a Cluster is, depending on your setup you may want to dep
 
 Because of how modular a Cluster is, you can add more Plotters if you want to plot faster, more Farmers if you want to farm more space, and more Cache and/or Controllers to increase efficiency. For instance, many users put a Cache on every PC with a Plotter to reduce network traffic.
 
-For redundancy, you can run multiple Controllers and Cache pairs. Additional redundancy can be added for NATs by running a NATs cluster (different than an Autonomys cluster). These more complex topics will be covered in the Advanced Clusters guide.
+For redundancy, you can run multiple Controllers and Cache pairs. Additional redundancy can be added for NATs by running a NATs cluster (different than an Autonomys cluster). These more complex topics will be covered in the [Advanced Clusters Guide](https://hakehardware.github.io/docs/guides/autonomys/advanced-clusters).
 
 Before we continue, let us take a look at a slightly more complex but very common Cluster set up.
 
@@ -131,7 +131,7 @@ The main benefit of a Cluster is that you can split it up and duplicate it. This
 
 In this example, we see that there is a dedicated Node which handles only Node related things. The Node is connected to the Cluster Controller which is running on a dedicated Cluster. On the dedicated Cluster, the Controller is connected to the Node and NATs. Each of the other Cluster components just attach to NATs. Then there is a dedicated Plotter which is connected to the NATs container on the dedicated Cluster. Last, there is a dedicated Farmer which connects to the NATs container on the dedicated Cluster.
 
-In this example, all Cluster components are being managed by the dedicated Cluster. If that PC goes down, the whole cluster breaks. You could add redundancy here by having the dedicated Plotter and Farmer run NATs and a Controller as well. This topic is covered in Advanced Clusters guide.
+In this example, all Cluster components are being managed by the dedicated Cluster. If that PC goes down, the whole cluster breaks. You could add redundancy here by having the dedicated Plotter and Farmer run NATs and a Controller as well. This topic is covered in [Advanced Clusters Guide](https://hakehardware.github.io/docs/guides/autonomys/advanced-clusters).
 
 As with the last set up, the files to create this type of setup are found in the [autonomys_files](https://github.com/hakehardware/autonomys_files) repo.
 
