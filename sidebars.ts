@@ -20,7 +20,6 @@ const sidebars: SidebarsConfig = {
         slug: '/category/linux',
       },
       items: [
-        'guides/linux/install-debian-core', 
         'guides/linux/install-docker-debian', 
         'guides/linux/install-portainer-host-agent',
         'guides/linux/install-nvidia-drivers-ubuntu',
@@ -37,7 +36,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'guides/comet/build-autonomys-image', 
-        'install-os-on-comet'
+        'guides/comet/install-os-on-comet'
       ]
     },
     {

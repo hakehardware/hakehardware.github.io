@@ -11,59 +11,8 @@ This guide will cover how to install Debian Bookworm, Armbian, and Open Media Va
 
 There is an [Official Guide](https://wiki.friendlyelec.com/wiki/index.php/CM3588#Option_1:_Install_OS_via_TF_Card) from FriendlyElec, however I found it a bit difficult to follow and it had a few steps missing.
 
-## Prepare the Micro SD Card
-Regardless of what OS you install, the micro SD card will need to be prepped.
-
-### Clean the Micro SD Card
-Install the micro SD card into your Windows PC and open up Diskpart. You can do this by pressing `WIN + x`, and then selecting `Terminal (Admin)`. Then type
-```bash
-diskpart
-```
-
-Find the disk number for your micro SD card with
-```bash
-list disk
-```
-
-On my system it was obvious as I have a 16GB card (shows as 14GB)
-
-![list-disk](/static/img/install-os-on-comet/list-disk.png)
-
-Select the disk
-```bash
-select disk <YOUR DISK NUMBER>
-```
-
-:::warning
-
-The next step will erase the data on the selected disk. Make absolutely sure it is the right disk. The data will be lost.
-
-:::
-
-Clean the disk with
-```bash
-clean
-```
-
-Now create a primary partition
-```bash
-create partition primary
-```
-
-### Reset the SD Card
-Download the [SD Memory Card Formatter](https://www.sdcard.org/downloads/formatter/) from the SD Association site. You will need to scroll down a bit and select Windows
-
-![sd-card-formatter](/static/img/install-os-on-comet/sd-card-formatter.png)
-
-On the next page, scroll to the bottom and accept the terms. This will start the download. Once downloaded, extract the file and install the SD Card Formatter. Once installed, open it up
-
-![sd-card-formatter-open](/static/img/install-os-on-comet/sd-card-formatter-open.png)
-
-Select the appropriate card, and click the "Format" button. It should not take too long, and you should get a pop up stating it was successful
-
-![sd-card-formatter-success](/static/img/install-os-on-comet/sd-card-formatter-success.png)
-
-The micro SD Card is now prepared.
+Before proceed please make sure you have done the following:
+* [Prepare Your Micro SD Card](https://hakehardware.github.io/docs/guides/comet/prepare-micro-sd-card)
 
 ## Debian
 I highly recommend the Debian Core for Autonomys. Although Ubuntu Desktop works, it will use more resources. 
@@ -75,22 +24,15 @@ Find the appropriate image
 * Debian Image: `rk3588-eflasher-debian-bookworm-core-6.1-arm64-20240818.img.gz`
 
 ### Write Image to Micro SD Card
-Download the [USBImager](https://gitlab.com/bztsrc/usbimager) tool, which we will use to write the image to the micro SD card. Once downloaded, extract the file and open up the tool. You should see something like
-
-![usb-imager-1](/static/img/install-os-on-comet/usb-imager-1.png)
-
-In the first input, select the image you downloaded in the previous step. Then select the micro SD card you reset earlier and click "Write"
-
-![usb-imager-2](/static/img/install-os-on-comet/usb-imager-2.png)
-
-It may take a few minutes to write the image to the disk as micro SD cards are not exactly speedy. You should see `Image written successfully` once it is done
-
-![usb-imager-3](/static/img/install-os-on-comet/usb-imager-3.png)
-
-The card is now ready to boot
+Next, the image needs to be written to the micro SD card. The steps are described here:
+* [Write Image to Micro SD Card](https://hakehardware.github.io/docs/guides/comet/write-image-to-sd-card)
 
 ### Boot the Micro SD Card
-Insert the micro SD card into the COMET and turn it on. It should automatically boot from the micro SD card and install the operating system. Once completed, you can power off the system and remove the micro SD card.
+Insert the micro SD card into the COMET and turn it on. It should automatically boot from the micro SD card and install the operating system. It is recommended to have a monitor hooked up for this step so you can see the install progress. 
+
+NOTE: The HDMI port closest to the USB port is an INPUT. You must use the other 2 ports to get a video OUTPUT signal. 
+
+Once completed, you can power off the system and remove the micro SD card.
 
 ### Recommended Post-Install Steps
 Power the COMET back on and it should boot into Debian. By default there are two accounts:
@@ -98,7 +40,7 @@ Power the COMET back on and it should boot into Debian. By default there are two
 * pi - username `pi` and password `pi`
 
 #### Change Root Password
-Log in as root so that you can change the root password and set up a user account. Then run
+Log in as root so that you can change the root password and set up a user account. To change the password run
 ```bash
 passwd
 ```
@@ -131,7 +73,7 @@ nano /etc/ssh/sshd_config
 
 Then find the entry for `PermitRootLogin` and set it to `no`
 
-![root-login-no](/static/img/install-os-on-comet/root-login-no.png)
+![root-login-no](/img/install-os-on-comet/root-login-no.png)
 
 #### Update Sources
 By default some mirrors are used that I am not familiar with. I usually set them back to the default 
@@ -161,6 +103,19 @@ deb http://deb.debian.org/debian bookworm-backports main non-free-firmware
 deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware
 ```
 
+#### Update Your System
+Now that we have the correct repositories, update your system
+```bash
+apt update && apt upgrade -y
+```
+
+Once that is complete, restart your system with
+```bash
+reboot now
+```
+
+And then login as your new user.
+
 #### Set Hostname
 By default you get the hostname of CM3588. This might be fine, but you can set your own. You can do this with
 ```bash
@@ -177,7 +132,37 @@ sudo nano /etc/hosts
 The CM3588 has "community support" for Armbian. Meaning it may not work and should be used only if the associated risks have been accepted.
 :::
 
-TODO
+Please make sure you have prepared your micro SD card before proceeding
+* [Prepare the Micro SD Card](#prepare-the-micro-sd-card)
+
+Download the Armbian OS for the CM3588 NAS Kit
+* [Armbian Download](https://www.armbian.com/nanopc-cm3588-nas/)
+
+At the time of this guide, there are three options available: Desktop, Minimal/IOT, and Dedicated Applications (OpenMediaVault). If you want a GUI then go for the Desktop. I will be using this headless, so the minimal/IOT image is what I downloaded and what this guide follows.
+
+### Write Image to Micro SD Card
+Next, the image needs to be written to the micro SD card. The steps are described here:
+* [Write Image to Micro SD Card](https://hakehardware.github.io/docs/guides/comet/write-image-to-sd-card)
+
+### Boot from Micro SD Card
+Once the image has been written, insert it into the COMET and turn it on. It will automatically boot from the micro SD card. At this point I usually SSH into the COMET as it is easier to manage it from my main PC. But you could hook up a keyboard and monitor as well. Either way, after first login you will go through a setup process to reset the root password and create a new user. Once completed, update the system with
+```bash
+apt update && apt upgrade -y
+```
+
+Once this is finished you can install Armbian on to the eMMC, which will erase everything on it, and write the OS to it so you can boot directly to Armbian via the eMMC. To do this via the CLI, run the following command
+```bash
+armbian-install
+```
+
+A screen will pop up, select the option
+```bash
+2. Boot from eMMC - system on eMMC
+```
+
+The system will be installed and you will be given the option to Power Off the system, choose that option and remove the SD. Now power the system back on and it should boot from the eMMC and you can log in using the username and password you created during the setup. At this point you should be good to go!
+
+If you can, make sure you [support the Armbian project](https://www.armbian.com/newsflash/armbian-needs-your-help/).
 
 
 ## Open Media Vault
