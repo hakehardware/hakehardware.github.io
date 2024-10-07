@@ -24,7 +24,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/install-docker-debian', 
         'guides/linux/install-portainer-host-agent',
         'guides/linux/install-nvidia-drivers-ubuntu',
-        'guides/linux/nvidia-docker-toolkit'
+        'guides/linux/nvidia-docker-toolkit',
+        'guides/linux/use-grafana-to-monitor-system'
       ]
     },
     {
@@ -34,7 +35,7 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         slug: '/category/comet',
       },
-      items: ['guides/linux/install-debian-core']
+      items: ['guides/linux/install-debian-core', 'guides/comet/build-autonomys-image']
     },
     {
       type: 'category',
