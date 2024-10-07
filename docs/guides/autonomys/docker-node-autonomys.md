@@ -56,6 +56,12 @@ Open up Portainer, select the environment you want to run the Node on, and then 
 
 Then click "+ Add Stack". Add a name, I usually just call mine "autonomys", and then move down to the Web editor. I have hosted the node yaml file in the "autonomys-files" repo and can be viewed here: [node.yaml](https://github.com/hakehardware/autonomys_files/blob/main/node.yaml)
 
+:::warning
+
+If you are using an ARM platform like the COMET, you must uncomment the `platform: linux/amd64` in the node.yaml file
+
+:::
+
 A few things to note:
 1. The first two entries under "ports" are not required if you are using the default ports. One situation you would not be using the default ports is if you are running more than one Node. For instance if you have Space Acres on a computer (which runs a node) and also running the Advanced CLI or Docker with a Node.
 1. You can also remove the corresponding entries in the "command" section for the same reason

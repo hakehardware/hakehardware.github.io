@@ -119,6 +119,12 @@ Here is the basic architecture for an all-in-one setup
 
 On the left side are the resource we use. You will need an SSD (two shown, but can be 1 SSD with sufficient space) and either a GPU (recommended) or CPU for plotting. The Cluster Farmer can handle lots of SSDs, but requires at least one. On the right side you can see all of the Cluster components needed. In this scenario, the Node has its own stack file, NATs has its own stack file, and the Cluster has its own stack file. This separation is not necessarily required, but I prefer to compartmentalize these operations. On the [autonomys_files](https://github.com/hakehardware/autonomys_files) repo, there is an example YAML for each. Note that you should run the cluster-cpu.yaml if you do not have a supported GPU and the cluster-gpu.yaml if you have a supported GPU.
 
+:::warning
+
+If you are using an ARM platform like the COMET, you must uncomment the `platform: linux/amd64` in the yaml files
+
+:::
+
 1. [node.yaml](https://github.com/hakehardware/autonomys_files/blob/main/node.yaml)
 1. [nats.yaml](https://github.com/hakehardware/autonomys_files/blob/main/nats.yaml)
 1. [cluster-gpu.yaml (For GPU Plotting)](https://github.com/hakehardware/autonomys_files/blob/main/cluster-gpu.yaml)
