@@ -2,6 +2,14 @@
 title: Build Autonomys Images for COMET (CM3588)
 ---
 
+:::info
+
+You can also use the image I created if you do not wish to build your own
+* [COMET Farmer](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-farmer/general)
+* [COMET Node](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-node/general)
+
+:::
+
 ## Introduction
 There is no compatible Docker image for the COMET (CM3588), which requires users to build their own. This is a pretty simple process, we need to:
 1. Clone the Autonomys Subspace Repository
@@ -11,14 +19,6 @@ There is no compatible Docker image for the COMET (CM3588), which requires users
 
 To do this you should have Docker installed
 * [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
-
-:::info
-
-You can also use the image I created if you do not wish to build your own
-* [COMET Farmer](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-farmer/general)
-* [COMET Node](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-node/general)
-
-:::
 
 ##  Download Latest Version
 Head over to [Autonomys Releases](https://github.com/autonomys/subspace/releases) and get the source from the latest release. Once you copy the link you can download it with wget
