@@ -43,17 +43,16 @@ sudo docker buildx create --use
 ```
 
 ## Build the Image
-We need to build the image for `linux/arm64` using the correct dockerfile (aarch64) for both the Farmer and the Node. Using the `--load` flag should store the image locally for use.
+We need to build the image for `linux/arm64` using the correct dockerfile (aarch64) for both the Farmer and the Node. Using the `--load` flag should store the image locally for use. You should update the `<TAG>` to be the current release, such as `gemini-3h-2024-oct-03`
 
 ### Farmer
 ```bash
-sudo docker buildx build --platform linux/arm64 --progress plain --load -t autonomys-comet-farmer:maintenance -f Dockerfile-farmer.aarch64 .
-
-
+sudo docker buildx build --platform linux/arm64 --progress plain --load -t autonomys-comet-farmer:<TAG> -f Dockerfile-farmer.aarch64 .
 ```
 
 ### Node
 ```bash
-sudo docker buildx build --platform linux/arm64 --progress plain --load -t autonomys-comet-node:maintenance -f Dockerfile-node.aarch64 .
+sudo docker buildx build --platform linux/arm64 --progress plain --load -t autonomys-comet-node:<TAG> -f Dockerfile-node.aarch64 .
 ```
+
 This process may take some time depending on the resources your PC has available. 
