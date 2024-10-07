@@ -4,14 +4,12 @@ title: Build Autonomys Images for COMET (CM3588)
 
 :::info
 
-You can also use the image I created if you do not wish to build your own
-* [COMET Farmer](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-farmer/general)
-* [COMET Node](https://hub.docker.com/repository/docker/hakehardware/autonomys-comet-node/general)
+This should not be necessary and is for informational purposes only. You can use the aarch64 image by adding `-aarch64` to the end and specifying `platform: linux/amd64` in the stack file. 
 
 :::
 
 ## Introduction
-There is no compatible Docker image for the COMET (CM3588), which requires users to build their own. This is a pretty simple process, we need to:
+If you want to build your own images for whatever reason, this is a pretty simple process. We need to:
 1. Clone the Autonomys Subspace Repository
 1. Set up buildx
 1. Build the Image
@@ -55,4 +53,4 @@ sudo docker buildx build --platform linux/arm64 --progress plain --load -t auton
 sudo docker buildx build --platform linux/arm64 --progress plain --load -t autonomys-comet-node:<TAG> -f Dockerfile-node.aarch64 .
 ```
 
-This process may take some time depending on the resources your PC has available. 
+This process may take some time depending on the resources your PC has available. You can swap out the Dockerfile and change the platform depending on what system you are building the image for. 
