@@ -9,7 +9,7 @@ This guide was created for Gemeni 3h testnet and will be updated to mainnet once
 :::
 
 ## Introduction
-TODO
+Clusters can become pretty complicated as they grow. For the most part they scale well without doing too much work, but if your farm grows a lot then the potential for efficiencies and redundancies grows. 
 
 ## Multiple Controller/Cache Pairs
 If you are running multiple Plotters in a Cluster it can be beneficial to run a Controller/Cache pair on each. Since the plotter needs to retrieve data from the Cache it makes sense to have a Cache on each plotter. I have not been able to fully test just how much faster plotting is by having a localized Cache, but in theory there are benfits. If you have an extra 100GB or so of space, you should see some improvement.
