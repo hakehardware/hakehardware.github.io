@@ -35,7 +35,10 @@ const sidebars: SidebarsConfig = {
         type: 'generated-index',
         slug: '/category/comet',
       },
-      items: ['guides/linux/install-debian-core', 'guides/comet/build-autonomys-image']
+      items: [
+        'guides/comet/build-autonomys-image', 
+        'install-os-on-comet'
+      ]
     },
     {
       type: 'category',
