@@ -23,7 +23,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/install-debian-core', 
         'guides/linux/install-docker-debian', 
         'guides/linux/install-portainer-host-agent',
-        'guides/linux/install-nvidia-drivers-ubuntu'
+        'guides/linux/install-nvidia-drivers-ubuntu',
+        'guides/linux/nvidia-docker-toolkit'
       ]
     },
     {
