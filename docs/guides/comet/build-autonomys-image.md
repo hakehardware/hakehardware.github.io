@@ -12,14 +12,24 @@ There is no compatible Docker image for the COMET (CM3588), which requires users
 To do this you should have Docker installed
 * [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
 
-## Clone Repo
-Currently, since mainnet is not live, we must clone the maintenance branch. This will not be required once mainnet is here
+##  Download Latest Version
+Head over to [Autonomys Releases](https://github.com/autonomys/subspace/releases) and get the source from the latest release. Once you copy the link you can download it with wget
 ```bash
-git clone --branch maintenance https://github.com/autonomys/subspace.git
+wget <LINK>
+```
+
+Then extract the tar with 
+```bash
+tar -xzvf <tar file>
+```
+
+Then cd into the directory that was created.
+```bash
+cd <FOLDER NAME>
 ```
 
 ## Set up buildx
-Set up a buildx builder that supports multiple platforms
+Set up a buildx builder, if you do not already have one, that supports multiple platforms
 ```bash
 sudo docker buildx create --use
 ```
