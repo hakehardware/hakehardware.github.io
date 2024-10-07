@@ -36,7 +36,9 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'guides/comet/build-autonomys-image', 
-        'guides/comet/install-os-on-comet'
+        'guides/comet/install-os-on-comet',
+        'guides/comet/prepare-micro-sd-card',
+        'guides/comet/write-image-to-sd-card'
       ]
     },
     {
