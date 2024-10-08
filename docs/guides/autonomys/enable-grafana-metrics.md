@@ -63,8 +63,4 @@ I usually update the name, UID, and then make sure to select the correct prometh
 
 You should now see your Dashboard. 
 
-
-
-
-
-
+![dashboard](/img/autonomys-grafana/dashboard.png)
