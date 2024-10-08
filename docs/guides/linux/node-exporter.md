@@ -16,7 +16,7 @@ This will get you up to speed. For each PC you want to monitor you will need to 
 
 ## Download
 
-Grab the link for the latest version of node_exporter on the Prometheus download page
+Grab the link for the latest version of node_exporter on the Prometheus download page. You likely want the one that ends in `linux-amd64.tar.gz`
 * [node_exporter download](https://prometheus.io/download/#node_exporter)
 
 You can download the file with
