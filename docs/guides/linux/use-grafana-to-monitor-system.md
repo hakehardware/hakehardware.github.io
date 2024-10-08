@@ -26,7 +26,7 @@ Prometheus is a tool for monitoring and collecting data about your systems and a
 
 We need to set up a Prometheus Docker container. If you have multiple PCs you want to monitor, you can set it up so you just have a single Prometheus instance, or you can have multiple. In this guide I will be using a single Prometheus instance. Select a host for Prometheus and create a folder to store a Prometheus config
 ```bash
-sudo mkdir ~/prometheus
+mkdir ~/prometheus
 ```
 
 ### Create Config
@@ -69,7 +69,7 @@ You can choose a different subnet, gateway, and network name, but make sure to u
 :::
 
 ### Create Prometheus Container
-In side Portainer, open the environment (PC) where you will be deploying Prometheus. Then create a new stack file called "prometheus". Then open up the prometheus.yaml file hosted on my github
+Inside Portainer, open the environment (PC) where you will be deploying Prometheus. Then create a new stack file called "prometheus". Then open up the prometheus.yaml file hosted on my github
 * [prometheus.yaml](https://github.com/hakehardware/autonomys_files/blob/main/prometheus/prometheus.yaml)
 
 Copy that, and paste it into the Portainer web editor. Make the following changes:

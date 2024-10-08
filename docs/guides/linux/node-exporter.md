@@ -16,8 +16,14 @@ This will get you up to speed. For each PC you want to monitor you will need to 
 
 ## Download
 
-Grab the link for the latest version of node_exporter on the Prometheus download page. You likely want the one that ends in `linux-amd64.tar.gz`
-* [node_exporter download](https://prometheus.io/download/#node_exporter)
+:::warning
+
+I have made the mistake of downloading the darwin version so double check it is `linux` and you have the correct platform. I hate how similar `arm64` and `amd64` look :|
+
+:::
+
+Grab the link for the latest version of node_exporter on the Prometheus download page. You likely want the one that ends in `linux-amd64.tar.gz` for standard Linux and `linux-arm64.tar.gz` for ARM boards like the COMET.
+* [node_exporter download](https://github.com/prometheus/node_exporter/releases)
 
 You can download the file with
 ```bash
@@ -115,7 +121,7 @@ Then add a new job for node_exporter
 
 Take note of the IP address. This is the gateway of the monitoring network we set up in the Grafana guide. In order for node_exporter to reach Prometheus the gateway of the Docker network that Prometheus is on must be used.
 
-If you have a different network gateway for Prometheus, you will need to change it. Once the config is updated, restart the Prometheus docker container so the changes take effect.
+If you have a different network gateway for Prometheus, you will need to change it. Once the config is updated, restart the Prometheus docker container so the changes take effect. If you are adding a node_exporter job running on another PC, you will use the IP address of the other PC as the target.
 
 You can be sure the node_exporter target was loaded by checking the web frontend for Prometheus. Click the "Status" menu item in the navbar and then the "Targets" menu item to see all connected targets
 
