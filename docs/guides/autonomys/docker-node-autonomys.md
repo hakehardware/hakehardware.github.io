@@ -120,4 +120,6 @@ As you can see we had a HUGE jump in `best`. Unfortunately it will still require
 
 One way to make sure you have your ports forwarded correctly is to check on [you get signal](https://www.yougetsignal.com/tools/open-ports/). Just enter 30333 and 30433 and click "Check". 
 
+![port-open](/img/docker-node-autonomys/port-open.png)
+
 And that is it! As mentioned earlier, it is quite simple to add a cluster, so check out the [Farmer Cluster Guide for Autonomys](https://hakehardware.github.io/docs/guides/autonomys/docker-cluster-autonomys), and that is covered in the Farmer Guide.
