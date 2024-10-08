@@ -133,7 +133,7 @@ The CM3588 has "community support" for Armbian. Meaning it may not work and shou
 :::
 
 Please make sure you have prepared your micro SD card before proceeding
-* [Prepare the Micro SD Card](#prepare-the-micro-sd-card)
+* [Prepare Your Micro SD Card](https://hakehardware.github.io/docs/guides/comet/prepare-micro-sd-card)
 
 Download the Armbian OS for the CM3588 NAS Kit
 * [Armbian Download](https://www.armbian.com/nanopc-cm3588-nas/)

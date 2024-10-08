@@ -1,5 +1,5 @@
 ---
-title: Monitor Your System with Prometheus, Node Exporter, and Grafana
+title: Node Exporter
 ---
 
 ## Introduction
@@ -10,7 +10,7 @@ There is a nice guide on the Prometheus site: [node_exporter](https://prometheus
 This guide assumes you have Docker installed and Grafana cloud already set up with Prometheus. If you need help with that check out
 * [Install Docker on Debian](https://hakehardware.github.io/docs/guides/linux/install-docker-debian)
 * [Install Portainer Host/Agent](https://hakehardware.github.io/docs/guides/linux/install-portainer-host-agent)
-* [Use Grafana to Monitor Your System](https://hakehardware.github.io/docs/linux/use-grafana-to-monitor-system)
+* [Use Grafana to Monitor Your System](https://hakehardware.github.io/docs/guides/linux/use-grafana-to-monitor-system)
 
 This will get you up to speed. For each PC you want to monitor you will need to complete the set up process to start publishing metrics.
 

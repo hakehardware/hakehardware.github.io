@@ -24,7 +24,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/install-portainer-host-agent',
         'guides/linux/install-nvidia-drivers-ubuntu',
         'guides/linux/nvidia-docker-toolkit',
-        'guides/linux/use-grafana-to-monitor-system'
+        'guides/linux/use-grafana-to-monitor-system',
+        'guides/linux/node-exporter'
       ]
     },
     {
