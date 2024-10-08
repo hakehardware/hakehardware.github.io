@@ -30,6 +30,13 @@ mkdir ~/prometheus
 ```
 
 ### Create Config
+
+:::info
+
+I prefer to store my prometheus config in my home directory. If you previously installed Prometheus via apt or another package manager it may already have a config file at `/etc/prometheus/prometheus.yml`. Most guides use that location as well. It really does not make a difference as far as I can tell.
+
+:::
+
 Then create and open the config file
 ```bash
 nano ~/prometheus/config.yaml

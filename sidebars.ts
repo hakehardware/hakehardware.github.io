@@ -71,7 +71,8 @@ const sidebars: SidebarsConfig = {
         'guides/autonomys/docker-node-autonomys', 
         'guides/autonomys/docker-cluster-autonomys', 
         'guides/autonomys/prep-your-drives-for-autonomys',
-        'guides/autonomys/advanced-clusters'
+        'guides/autonomys/advanced-clusters',
+        'guides/autonomys/enable-grafana-metrics'
       ]
     }
   ]
