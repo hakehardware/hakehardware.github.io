@@ -136,11 +136,11 @@ Make sure that you have CIFS client enabled. In Windows 11 you can do this by se
 ![turn-on](/img/samba-share/turn-on.jpg)
 
 Now scroll down to “SMB 1.0/CIFS File Sharing Support” and make sure “SMB 1.0/CIFS Client” is checked. You can leave the other two unchecked
-![cifs](/img/samba-share/cifs-enable.jpg)
+![cifs](/img/samba-share/cifs-enable.png)
 
 Windows will need to install some things, and then reboot. If I remember correctly it says it is installing some updates. Let the process finish, when you are back in windows open up the file explorer, then right click and select “Add a Network Location”
 
-![add-network](/img/samba-share/add-network.jpg)
+![add-network](/img/samba-share/add-network.png)
 
 Click ‘Next”, select “Choose a custom network location”, and then enter in the the address of the drive, which should be something like
 
@@ -163,7 +163,7 @@ So for me, since my IP is 192.168.69.100 and I named my share ‘example’ in t
 
 The share name might even populate automatically, which is a good sign things are working well. You will be prompted to login, make sure to use the username and password we created earlier
 
-![creds](/img/samba-share/creds.jpg)
+![creds](/img/samba-share/creds.png)
 
 The drive should open and you should be able to create files and directories.
 
