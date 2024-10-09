@@ -1,5 +1,5 @@
 ---
-title: Prep SSDs for Autonomys
+title: Prepare Farmer SSDs
 ---
 
 :::warning

@@ -1,5 +1,5 @@
 ---
-title: Advanced Autonomys Clusters
+title: Advanced Clusters
 ---
 
 :::warning

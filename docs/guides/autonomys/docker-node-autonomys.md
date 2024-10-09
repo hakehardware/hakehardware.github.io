@@ -1,5 +1,5 @@
 ---
-title: Autonomys Node (Docker)
+title: Node (Docker)
 ---
 
 :::warning

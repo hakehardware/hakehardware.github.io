@@ -1,5 +1,5 @@
 ---
-title: Autonomys Cluster Farmer (Docker)
+title: Cluster Farmer (Docker)
 ---
 
 :::warning
