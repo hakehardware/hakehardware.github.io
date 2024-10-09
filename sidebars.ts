@@ -26,7 +26,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/nvidia-docker-toolkit',
         'guides/linux/use-grafana-to-monitor-system',
         'guides/linux/node-exporter',
-        'guides/linux/host-local-ai'
+        'guides/linux/host-local-ai',
+        'guides/linux/backup-restore-mdadm'
       ]
     },
     {

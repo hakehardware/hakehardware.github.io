@@ -95,27 +95,27 @@ The initial deployment can take a while, the image is really large, so give it s
 ## Getting Started with Open WebUI
 You will be prompted to create an account, this creates an account locally, so no worries about your data being sent externally. After that, it is time to load up a model! Head over to https://ollama.com/library and click the link for llama3.2 (or whatever is the latest model while you are doing this). On the left, select if you want the 1b or 3b model, then look for the name of the model (underlined in red) on the right. Copy it
 
-![llama32](/static/img/host-local-ai/llama32.png)
+![llama32](/img/host-local-ai/llama32.png)
 
 Now go back to Open WebUI, at the top right click your avatar, then click “Admin Panel”. Then click the “Settings” tab. 
 
-![settings](/static/img/host-local-ai/settings.png)
+![settings](/img/host-local-ai/settings.png)
 
 Select “Models”. Then in the input for entering the model tag, add the llama model
 
-![pull-model](/static/img/host-local-ai/pull-model.png)
+![pull-model](/img/host-local-ai/pull-model.png)
 
 Then on the far right click the download button to pull the model in. 
 
-![pull-percent](/static/img/host-local-ai/pull-percent.png)
+![pull-percent](/img/host-local-ai/pull-percent.png)
 
 Now click “New Chat” at the top left, and you should be able to select a model now
 
-![select-model](/static/img/host-local-ai/select-model.png)
+![select-model](/img/host-local-ai/select-model.png)
 
 Select the llama model and ask it a question. It should respond (it could take some time depending on your system. If it is taking too long, try the 1b model)
 
-![how-assist](/static/img/host-local-ai/how-assist.png)
+![how-assist](/img/host-local-ai/how-assist.png)
 
 If you want to see how much the model is using your GPUs you can install nvtop:
 
@@ -131,6 +131,6 @@ nvtop
 
 Now ask it a more complex question to see the GPUs get some load. 
 
-![gpu-load](/static/img/host-local-ai/gpu-load.png)
+![gpu-load](/img/host-local-ai/gpu-load.png)
 
 I am running two 4090s so with a 3b model the responses are almost instant. And that’s it! Go ahead and try some more models, you can download a bunch and easily switch between them (or even run 2 at the same time). There is a lot more you can do with Open WebUI so take a look at the docs. Some interesting things I plan to do videos on is how to integrate SearXNG and image generation. So subscribe to my YouTube channel and give the video a like if you want to see more content like this.
