@@ -115,7 +115,7 @@ Now click “New Chat” at the top left, and you should be able to select a mod
 
 Select the llama model and ask it a question. It should respond (it could take some time depending on your system. If it is taking too long, try the 1b model)
 
-![how-assist](/img/host-local-ai/how-assist.png)
+![how-assist](/img/host-local-ai/how-assist.jpg)
 
 If you want to see how much the model is using your GPUs you can install nvtop:
 
