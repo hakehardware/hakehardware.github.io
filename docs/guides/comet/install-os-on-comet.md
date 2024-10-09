@@ -35,7 +35,7 @@ NOTE: The HDMI port closest to the USB port is an INPUT. You must use the other 
 Once completed, you can power off the system and remove the micro SD card.
 
 ### Recommended Post-Install Steps
-Power the COMET back on and it should boot into Debian. By default there are two accounts:
+Power the COMET back on and it should boot into Debian. By default there are two accounts, log in to the `root` account:
 * root - username `root` and password `fa`
 * pi - username `pi` and password `pi`
 
@@ -47,12 +47,12 @@ passwd
 
 #### Remove the `pi` user
 ```bash
-userdel pi
+userdel -r pi
 ```
 
 #### Add a new user
 ```bash
-useradd -m <USERNAME>
+useradd -m -s /bin/bash <USERNAME>
 ```
 
 Set the password for your user
@@ -109,22 +109,21 @@ Now that we have the correct repositories, update your system
 apt update && apt upgrade -y
 ```
 
-Once that is complete, restart your system with
-```bash
-reboot now
-```
-
-And then login as your new user.
-
 #### Set Hostname
 By default you get the hostname of CM3588. This might be fine, but you can set your own. You can do this with
 ```bash
-sudo hostnamectl set-hostname <NEW_HOSTNAME>
+hostnamectl set-hostname <NEW_HOSTNAME>
 ```
 
 And then open up the hosts file and swap out any instance of `CM3588` with your new hostname
 ```bash
-sudo nano /etc/hosts
+nano /etc/hosts
+```
+
+#### Reboot
+Now reboot and login with the new user
+```bash
+reboot now
 ```
 
 ## Armbian
