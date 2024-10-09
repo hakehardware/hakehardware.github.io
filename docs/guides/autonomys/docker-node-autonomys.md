@@ -1,5 +1,5 @@
 ---
-title: Run an Autonomys Node on Docker
+title: Autonomys Node (Docker)
 ---
 
 :::warning

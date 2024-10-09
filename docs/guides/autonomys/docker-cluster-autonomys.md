@@ -1,5 +1,5 @@
 ---
-title: Run an Autonomys Cluster Farmer on Docker
+title: Autonomys Cluster Farmer (Docker)
 ---
 
 :::warning

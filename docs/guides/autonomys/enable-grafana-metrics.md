@@ -1,5 +1,5 @@
 ---
-title: Monitoring Your Autonomys Containers with Grafana
+title: Prometheus & Grafana Monitoring
 ---
 
 :::warning

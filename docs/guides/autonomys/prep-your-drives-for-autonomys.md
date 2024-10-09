@@ -1,5 +1,5 @@
 ---
-title: Prep Your Drives for Autonomys
+title: Prep SSDs for Autonomys
 ---
 
 :::warning
