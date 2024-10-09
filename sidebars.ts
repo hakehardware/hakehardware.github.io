@@ -25,7 +25,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/install-nvidia-drivers-ubuntu',
         'guides/linux/nvidia-docker-toolkit',
         'guides/linux/use-grafana-to-monitor-system',
-        'guides/linux/node-exporter'
+        'guides/linux/node-exporter',
+        'guides/linux/host-local-ai'
       ]
     },
     {
