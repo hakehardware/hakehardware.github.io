@@ -12,8 +12,9 @@
         <id>https://hakehardware.github.io/blog/welcome</id>
         <link href="https://hakehardware.github.io/blog/welcome"/>
         <updated>2024-10-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[I have decided to move all of my guides to Github Pages! This allows me more control over my content and makes it a lot easier to keep guides up to date! I plan to have quite a bit of content on:]]></summary>
-        <content type="html"><![CDATA[<p>I have decided to move all of my guides to Github Pages! This allows me more control over my content and makes it a lot easier to keep guides up to date! I plan to have quite a bit of content on:</p>
+        <summary type="html"><![CDATA[I have decided to move all of my guides to Github Pages! This allows me more control over my content and makes it a lot easier to keep guides up to date!]]></summary>
+        <content type="html"><![CDATA[<p>I have decided to move all of my guides to Github Pages! This allows me more control over my content and makes it a lot easier to keep guides up to date!</p>
+<p>I plan to have quite a bit of content on:</p>
 <ol>
 <li>General Linux &amp; Windows guides</li>
 <li>Blockchains like Autonomys and Spacemesh</li>
