@@ -1,6 +1,11 @@
 ---
 title: Learn How to Use Grafana to Monitor Your System
 ---
+:::info
+
+If you already have Prometheus installed on another PC that is reachable from the one you are setting up now, you do not need to deploy another instance of Prometheus, you can simply add this PC as a target in config.yaml for the existing Prometheus instance.
+
+:::
 
 ## Introduction
 I am a sucker for some good monitoring. Grafana is a pretty well known way to create a monitoring dashboard and in this guide I will cover how I do it on my Ubuntu/Debian systems.

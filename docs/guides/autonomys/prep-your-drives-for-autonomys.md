@@ -180,7 +180,7 @@ cd scripts
 ### Make Script Executable
 Now make the nvme_prep.sh script executable
 ```bash
-chown +x nvme_prep.sh
+chmod +x nvme_prep.sh
 ```
 
 
