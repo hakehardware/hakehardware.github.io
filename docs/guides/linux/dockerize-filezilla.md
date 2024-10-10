@@ -51,6 +51,6 @@ id <username>
 ```
 
 I get the following output
-![id-hakehardware](/static/img/dockerize-filezilla/id-hakehardware.jpg)
+![id-hakehardware](/img/dockerize-filezilla/id-hakehardware.jpg)
 
 The key parts are UID=1000 and GID for ‘smbusers’ is 1001. Also, prior to this I had already added my user “hakehardware” to the “smbusers” group which is why it shows up when I run the '“id” command. If a group you expect to be in doesn’t show up you will need to add your user to that group first.

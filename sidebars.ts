@@ -27,7 +27,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/use-grafana-to-monitor-system',
         'guides/linux/node-exporter',
         'guides/linux/host-local-ai',
-        'guides/linux/backup-restore-mdadm'
+        'guides/linux/backup-restore-mdadm',
+        'guides/linux/dockerize-filezilla'
       ]
     },
     {
