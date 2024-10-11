@@ -28,7 +28,8 @@ const sidebars: SidebarsConfig = {
         'guides/linux/node-exporter',
         'guides/linux/host-local-ai',
         'guides/linux/backup-restore-mdadm',
-        'guides/linux/dockerize-filezilla'
+        'guides/linux/dockerize-filezilla',
+        'guides/linux/monitor-gpu-grafana'
       ]
     },
     {
