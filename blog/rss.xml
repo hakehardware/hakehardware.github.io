@@ -4,10 +4,31 @@
         <title>Hake Hardware Blog</title>
         <link>https://hakehardware.github.io/blog</link>
         <description>Hake Hardware Blog</description>
-        <lastBuildDate>Thu, 10 Oct 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Oct 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[New Format]]></title>
+            <link>https://hakehardware.github.io/blog/new_format</link>
+            <guid>https://hakehardware.github.io/blog/new_format</guid>
+            <pubDate>Fri, 11 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Getting Familiar]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="getting-familiar">Getting Familiar<a href="https://hakehardware.github.io/blog/new_format#getting-familiar" class="hash-link" aria-label="Direct link to Getting Familiar" title="Direct link to Getting Familiar">​</a></h2>
+<p>If you are here you have probably noticed I am now using a wiki-style layout for my guides.</p>
+<p>I wanted to replicate some of the content really quick to better understand how Docusaurus (the platform that runs this thing) works and get familiar with it. Now that I have had a week or so to play around I'm getting the feel of things and starting to find some direction.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="new-format">New Format<a href="https://hakehardware.github.io/blog/new_format#new-format" class="hash-link" aria-label="Direct link to New Format" title="Direct link to New Format">​</a></h2>
+<p>My plan is to have a Wiki section and an Articles section. We are currently in the Articles section. This is where I will create more long-form style content. Maybe a review, or unboxing, or test of something where I want to share the results. It will be a place where I do not feel bad rambling on about things. In the Wiki section, I want it to be mostly straight to the point no BS. If you want to set up an Autonomys cluster, you can go to the Wiki and see all the commands and templates I use when creating mine. That point actually brings me to another important point, the Wiki section is for the way I do things. It may not be the official way, and it may not be the best way, but it is how I have made it work. SO, to recap, there will be <strong>Wikis</strong> which is where I will post straight forward guides on how to do all sorts of things and <strong>Articles</strong>, which is where I will post long form content.</p>
+<p>As for how my YouTube videos fit in, I imagine every Article will get a YouTube video, and most Wikis will get a YouTube video. The problem with making YouTube videos for the Wikis is that the Wikis will change over time. They are a living document. So the YouTube video will become out dated pretty quickly. However, when that happens it will almost surely be time for a new Article on all the changes, which will have a YouTube video. So it sort of works itself out. To highlight something that I think is really cool - I will do my best to keep the Wiki updated. So you can keep coming back to the same Wiki to get information and it <em>should</em> be updated.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-next">What's Next<a href="https://hakehardware.github.io/blog/new_format#whats-next" class="hash-link" aria-label="Direct link to What's Next" title="Direct link to What's Next">​</a></h2>
+<p>Right now I am prepping for Autonomys mainnet. I also have this fun idea to help support my YouTube channel and Wiki, which is to sell COMETs for Autonomys. I have no idea if anyone will buy one, but they are super cool and I will put out some content just on these. And lastly, I want to move a lot of my content over from substack, as well as update some of my older guides. This is a big project as I have been making guides and videos for a year now. But I do not like having things split between substack and Github. I also have some big life changes coming up (baby!) so that will, without a doubt, make things interesting!</p>
+<p>For those that read through this whole thing, thank you! Your interactions, whether that is a comment on my videos, likes, subscribing, it is all sincerly appreciated.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="my-channels">My Channels<a href="https://hakehardware.github.io/blog/new_format#my-channels" class="hash-link" aria-label="Direct link to My Channels" title="Direct link to My Channels">​</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/@hakehardware" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+<li><a href="https://discord.gg/uAdsVBWYfX" target="_blank" rel="noopener noreferrer">Discord Channel</a></li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Hello COMET]]></title>
             <link>https://hakehardware.github.io/blog/hello-comet</link>
