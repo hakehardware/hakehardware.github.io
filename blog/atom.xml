@@ -2,11 +2,59 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hakehardware.github.io/blog</id>
     <title>Hake Hardware Blog</title>
-    <updated>2024-10-05T00:00:00.000Z</updated>
+    <updated>2024-10-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hakehardware.github.io/blog"/>
     <subtitle>Hake Hardware Blog</subtitle>
     <icon>https://hakehardware.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hello COMET]]></title>
+        <id>https://hakehardware.github.io/blog/hello-comet</id>
+        <link href="https://hakehardware.github.io/blog/hello-comet"/>
+        <updated>2024-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[It's been about a month since I started testing this tiny Autonomys Farmer capable of 16TB, and I'm honestly impressed.]]></summary>
+        <content type="html"><![CDATA[<p>It's been about a month since I started testing this tiny Autonomys Farmer capable of 16TB, and I'm honestly impressed.</p>
+<p>I wanted to write an article on what the COMET is and why I have a whole section dedicated to them. In short, the COMET consists of a Custom 3D Printed Case + CM3588 (8G/64G) + NAS Kit (4x M.2 NVME, 2.5G NIC) + 60W PSU + Debian OS. The CM3588 gets some noteriety as it was featured by Linus Tech Tips in their <a href="https://www.youtube.com/watch?v=QsM6b5yix0U" target="_blank" rel="noopener noreferrer">Paying for Cloud Storage is Stupid</a> video. Of course it can be used for a NAS, but my use case is focused on Crypto. Specifically, I plan to use 8 of these to farm on the <a href="https://www.autonomys.xyz/" target="_blank" rel="noopener noreferrer">Autonomys Network</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="testing-on-autonomys">Testing on Autonomys<a href="https://hakehardware.github.io/blog/hello-comet#testing-on-autonomys" class="hash-link" aria-label="Direct link to Testing on Autonomys" title="Direct link to Testing on Autonomys">​</a></h2>
+<p>Regardless of what you think about Crypto, jamming 4x NVME into such a small form factor is pretty darn cool. Maxing it out with 4x NVME results each NVME running @ PCIe 3.0 x1. This is not a significant amount of bandwidth. However, Autonomys is random read IOPS heavy, not bandwidth heavy. In my testing with 4x 4TB NVMEs fully plotted, I did not have a single missed reward in my week long testing. This can vary based on a lot of factors, but I think it's safe to say PCIe 3.0 x1 will not be an issue at 16TB.</p>
+<p>The 2.5G ethernet port allows for very quick plotting over your network, which is perfect for a dedicated Farmer like the COMET. I was not able to saturate the connection with 2x RTX 4090. However, it did appear that the cards were not being fully utilized. For most people, who will be plotting via a single GPU, this would be more than sufficient.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="thermals">Thermals<a href="https://hakehardware.github.io/blog/hello-comet#thermals" class="hash-link" aria-label="Direct link to Thermals" title="Direct link to Thermals">​</a></h3>
+<p>With so much packed into such a tight space, thermals were a bit of a worry. The board comes without any active cooling (however the COMET does have a 5v 50mm dual ball bearing fan). The NVME slots are also VERY tight, so most NVME heatsinks do not fit. I was able to use the ones that are held on by rubberbands. While not pretty, they did over some improvements in use with the COMET as the vents of the case direct air over the NVMEs and CPU.</p>
+<p>I recorded some data for both the CPU and the NVMEs as those were the biggest worry. The fan and heatsinks add quite a bit of effort as the 50mm fan requires soldering on the right connector and drilling out the holes for the screws I wanted to use, so I really wanted to see if all of that was worth it. It also adds about $15 in material costs per COMET.</p>
+<p>In the below charts, this was done with only the Farmer running, and plotting at about 1 sector per minute. At the time of the tests I was having issues with GPU plotting which is why it was a bit slow. Each test ran for one hour.</p>
+<p><strong>No Active Cooling, no NVME Heatsinks</strong></p>
+<p><strong>Active Cooling, NVME Heatsinks</strong></p>
+<p><strong>No Active Cooling, NVME Heatsinks</strong></p>
+<p><strong>Active Cooling, NVME Heatsinks</strong></p>
+<p>To really stress things I turned on CPU plotting for the COMET.</p>
+<p><strong>No Active Cooling, no NVME Heatsinks</strong></p>
+<p><strong>Active Cooling, NVME Heatsinks</strong></p>
+<p><strong>No Active Cooling, NVME Heatsinks</strong></p>
+<p><strong>Active Cooling, NVME Heatsinks</strong></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="resource-usage">Resource Usage<a href="https://hakehardware.github.io/blog/hello-comet#resource-usage" class="hash-link" aria-label="Direct link to Resource Usage" title="Direct link to Resource Usage">​</a></h3>
+<p>The next concern I had was if the CM3588 was going to have sufficient power. I really wanted to be able to run a fully encapsulated Autonomys Node + Farmer with a 8x COMET cluster, even if one of those was a dedicated Node. To do this I fully plotted two COMETs and created a few different setups. For all these tests I had the maximum cooling (Heatsinks + 50mm Fan)</p>
+<p><strong>Farmer Only</strong></p>
+<p>For the first test I am using COMET-Alpha as a dedicated Farmer. This is the least amount of resource usage.</p>
+<p><strong>Node Only</strong></p>
+<p>Next, I wanted to see what sort of stress running a Node on the COMET would provide. In order to get the full picture, I started with a fresh node, storing the Node Data on a USB mounted SSD.</p>
+<p><strong>Farmer + Plotter</strong></p>
+<p>Moving back to farming, I wanted to see how it would handle running both a Farmer and a Plotter. I never intended to perform initial plotting with these, so the NVMEs are fully plotted. My goal here is to see if these can handle replotting or if I will need to always have a dedicated GPU plotter hooked up to them.</p>
+<p><strong>Full Cluster</strong></p>
+<p>If I really want to have these self-plot, at least one of them will require a full Cluster which includes a Controller, Cache, and NATs. In this configuration, the COMET is once again fully plotted and will only be handling replots. The Cache is stored on a USB connected SSD and set to 110GiB which should be enough to hold a full cache.</p>
+<p><strong>Farming Cluster + Node</strong></p>
+<p>Finally, I brought in a second COMET to see how a fully self-reliant COMET cluster would perform. In order to spread the load as efficiently as possible I have the following configuration:</p>
+<p>COMET Alpha - Node + Cluster Farmer
+COMET Bravo - Cluster Farmer, Cluster Cache, Cluster Controller, Cluster Plotter, NATs</p>
+<p>My thought with this is that the Node is extremely resource intensive, so I will put as much of the Cluster components as I can on the other COMET to spread the load.</p>]]></content>
+        <author>
+            <name>Alex Hake</name>
+            <uri>https://github.com/hakehardware</uri>
+        </author>
+        <category label="Comet" term="Comet"/>
+        <category label="Autonomys" term="Autonomys"/>
+        <category label="Linux" term="Linux"/>
+        <category label="cm3588" term="cm3588"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://hakehardware.github.io/blog/welcome</id>
